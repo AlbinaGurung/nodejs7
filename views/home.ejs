@@ -4,8 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      body
+      {
+         padding:0;
+         margin:0;
+      }
+     .card{
+      
+       /* margin-bottom:20px; */
+        width: 300px;
+        height: 500px;
+       padding: 20px;
+        border-radius: 6px;
+        background-color: burlywood;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 8px auto;
+       
+        transition: transform 0.3s;
+
+     }
+     .card img{
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+     
+     
+     }
+     .card:hover {
+        transform: translateY(-5px);
+    }
+     .container
+     {
+       
+        display: flex;
+        flex-wrap: wrap;
+        transition: transform 0.3s;
+        max-width: 1200px;
+        margin: 200px auto ;
+        padding: 0 20px;
+
+        
+     }
+     .mybutton{
+       display:flex;
+       margin-top: 45%;
+       margin-left: 20%;
+       height: 30px;
+       width: 80px;
+       border-radius: 6px;
+      color: black;
+     
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      
+      
+     }
+
+    </style>
 </head>
-<body>
-   <h1><%- data.name %></h1> 
+<body style="background-color: bisque;">
+   
+   <%- include('navbar') %>
+   <div class="container">
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+        <h1>Card 1</h1>
+        <a href="/blog">Read More</a>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+      <h1>Card 1</h1>
+      <a href="/blog">Read More</a>
+       
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+      <h1>Card 1</h1>
+      <a href="/blog">Read More</a>
+   </div>
+    <div class="card">
+
+      <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+        <h1>This is card four</h1>
+        <a href="/blog">Read More</a>
+    </div>
+
+    </div>
+   </div>
+   <%- include('footer') %>
 </body>
 </html>

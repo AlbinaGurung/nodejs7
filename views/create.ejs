@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+    width: 800px;
+    display: flex;
+    height:100%;
+    background-color:lightcyan;
+    padding: 10px;
+    align-items: center;
+    border-color: black;
+    margin: 10px;
+    border-radius: 6px;
+    margin-top: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+body{
+    padding: 0;
+    margin:0;
+    background-color: bisque;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+.form-input{
+    width: 700px;
+    height: 60px;
+    
+    background-color:lightblue;
+    margin: 30px;
+    
+}
+.form-input-box
+{
+    width: 700px;
+    height: 50px;
+
+}
+
+</style>
+   
+</head>
+<body>
+    <%- include('navbar.ejs')%>
+    <div class="container">
+        <form action="" >
+            <div class="form-input">
+                <label for="Title">Title</label>
+                <input type="text" class="form-input-box">
+            </div>
+            <div class="form-input">
+                <label for="Subtitle">Subtitle</label>
+               <input type="text" class="form-input-box">
+            </div>
+            <div class="form-input">
+                <label for="Description">Description</label>
+                <input type="text" name="" id="" class="form-input-box">
+            </div>
+            <div class="form-input">
+                <label for="">Image</label>
+                <input type="text" class="form-input-box">
+            </div>
+            <div>
+                <button>Submit</button>
+                <button>clear
+                </button>
+            </div>
+        </form>
+    </div>
+    <%- include('footer.ejs')%>
+</body>
+</html>

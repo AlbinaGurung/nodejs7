@@ -6,7 +6,7 @@ const app=express();//used to call functions
 app.set('view engine','ejs')
 app.get('/',(req,res)=>{
     const data={name:"albina" ,age:23}
-    res.render('home.ejs',{data:data})
+    res.render('home.ejs',{data})
 })
 app.get('/about',(req,res)=>{
     res.send("This is about page")
@@ -15,13 +15,17 @@ app.get('/home',(req,res)=>
 {
     res.render('home.ejs')
 })
+app.get('/read',(req,res)=>
+{
+    res.render('read.ejs')
+})
 app.get('/blog/create',(req,res)=>
 {
-    res.send("Create form page")
+    res.render("create.ejs")
 })
 app.get('/blog/edit',(req,res)=>
 {
-    res.send("edit form")
+    res.render("edit.ejs")
 })
 app.get('/blog',(req,res)=>{
     res.render('blog.ejs')
