@@ -8,9 +8,7 @@ app.get('/',(req,res)=>{
     const data={name:"albina" ,age:23}
     res.render('home.ejs',{data})
 })
-app.get('/about',(req,res)=>{
-    res.send("This is about page")
-})
+
 app.get('/home',(req,res)=>
 {
     res.render('home.ejs')
@@ -19,9 +17,9 @@ app.get('/read',(req,res)=>
 {
     res.render('read.ejs')
 })
-app.get('/blog/create',(req,res)=>
+app.get('/create',(req,res)=>
 {
-    res.render("create.ejs")
+    res.render('create.ejs')
 })
 app.get('/blog/edit',(req,res)=>
 {
