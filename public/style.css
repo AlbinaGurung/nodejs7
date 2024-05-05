@@ -1,0 +1,25 @@
+nav
+{
+    background-color: darkcyan; 
+    color: white; 
+    padding: 0px;
+   width: 100%;
+    position: fixed;
+    top:0;
+    align-content: center;
+}
+
+nav ul li{
+    display: flex;
+    justify-content: center;
+}
+nav ul li a{
+    /* list-style-type: none;  */
+    
+    color: lightyellow;
+     font-size:30px; 
+     padding:20px; 
+      font-style: italic;
+      text-decoration: none;
+      z-index: 1000; 
+}

@@ -49,27 +49,25 @@ body{
 <body>
     <%- include('navbar.ejs')%>
     <div class="container">
-        <form action="" >
+        <form action="/blog" method="POST" >
             <div class="form-input">
                 <label for="Title">Title</label>
-                <input type="text" class="form-input-box">
+                <input type="text" class="form-input-box" name="title" id="title" required>
             </div>
             <div class="form-input">
                 <label for="Subtitle">Subtitle</label>
-               <input type="text" class="form-input-box">
+               <input type="text" class="form-input-box" name="subtitle" id="subtitle"required>
             </div>
             <div class="form-input">
                 <label for="Description">Description</label>
-                <input type="text" name="" id="" class="form-input-box">
+                <input type="text" class="form-input-box" name="description" id="description"required>
             </div>
             <div class="form-input">
                 <label for="">Image</label>
-                <input type="text" class="form-input-box">
+                <input type="file" class="form-input-box" name="Image" id="Image">
             </div>
             <div>
-                <button>Submit</button>
-                <button>clear
-                </button>
+                <input type="submit" value="submit">
             </div>
         </form>
     </div>
