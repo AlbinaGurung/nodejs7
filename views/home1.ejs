@@ -14,20 +14,28 @@ th,td{
         text-align: left;
     }
     #blogtable{
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
         border-collapse: collapse;
       
-        width: 80%;
+        width: 100%;
       
-        padding:auto;
+      margin-top: 200px;
+    }
+    table{
+        margin:0 auto;
     }
     th{
         background-color: cornflowerblue;
         text-align: left;
         width: 20%;
+        font-size: 25px;
 
     }
     tr{
         width: 100%;
+        justify-content: center;
     }
     
 </style>
@@ -45,16 +53,16 @@ th,td{
     </thead>
     </table>
   <tbody>
-   
-    <% allBlogs.foreach(blog=>{%>
-     <tr>
-        <td>1</td>
-        <td><%=blog.title%></td>
-        <td><%=blog.subTitle%></td>
-        <td><%=blog.description%></td>
-        <td><%=blog.imageUrl%></td>
-     </tr>
-<%});%>
+    <% allBlogs.forEach(blog=>{%>
+        <tr>
+           <td>1</td>
+           <td><%=blog.title%></td>
+           <td><%=blog.subTitle%></td>
+           <td><%=blog.description%></td>
+           <td><%=blog.imageUrl%></td>
+        </tr>
+   <%});%>
+
    
   </tbody>
 

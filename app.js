@@ -47,24 +47,25 @@ app.post('/blog',upload.single('Image'),(req,res)=>{
     })
 
  //sync the database and the model
-(async()=>{
-    try{
-     await sequelize.sync();
-     console.log("Database and model synced successfully")
-    }catch(error){
-console.error('error syncing the db and model',error)
-    }
-})();
-//fetching the data from the db and rendering it on the home1.ejs view
+// (async()=>{
+//     try{
+//      await sequelize.sync();
+//      console.log("Database and model synced successfully")
+//     }catch(error){
+// console.error('error syncing the db and model',error)
+//     }
+// })();
+// //fetching the data from the db and rendering it on the home1.ejs view
 app.get('/blog/home1',async(req,res)=>
 {
    
     try {
+        console.log("hello")
         const allBlogs = await blogs.findAll();//making a rest call to an api to get data
-        console.log(allBlogs)
-       // res.json(allBlogs); // Assuming you want to display JSON data
-       console.log(res)
-      res.render('./views/home1.ejs',{allBlogs})
+       console.log(allBlogs,"hello");
+    //    res.json(allBlogs); // Assuming you want to display JSON data
+  
+     res.render('home1',{ allBlogs })
     
     } catch (error) {
         console.error('Error fetching blogs:', error);

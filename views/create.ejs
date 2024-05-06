@@ -6,32 +6,34 @@
     <title>Document</title>
     <style>
         .container{
-    width: 800px;
+    width: 60%;
     display: flex;
     height:100%;
-    background-color:lightcyan;
-    padding: 10px;
+    background-color:cornflowerblue;
+    padding: 20px;
     align-items: center;
+    justify-content: center;
     border-color: black;
-    margin: 10px;
+    
     border-radius: 6px;
     margin-top: 200px;
-    margin-left: 100px;
-    margin-right: 100px;
-
+    
 }
 body{
     padding: 0;
     margin:0;
-    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    background-color: white;
     font-style: italic;
     font-weight: bold;
     font-size: 20px;
 }
 .form-input{
+    font-size: 25px;
     width: 700px;
     height: 60px;
-    
+    padding: 40px;
     background-color:lightblue;
     margin: 30px;
     
@@ -40,6 +42,7 @@ body{
 {
     width: 700px;
     height: 50px;
+   
 
 }
 
@@ -47,7 +50,7 @@ body{
    
 </head>
 <body>
-    <%- include('navbar.ejs')%>
+    <%- include('navbar') %>
     <div class="container">
         <form action="/blog" method="POST" enctype="multipart/form-data">
             <div class="form-input">
