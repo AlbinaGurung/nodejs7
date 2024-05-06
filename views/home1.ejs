@@ -9,7 +9,7 @@
 <style>
 th,td{
         border: 3px solid black;
-        padding: 8px;
+        
         width: 80%;
         text-align: left;
     }
@@ -51,11 +51,13 @@ th,td{
             <th>Image</th>
         </tr>
     </thead>
-    </table>
+   
   <tbody>
+    <% var sn=1 %>
     <% allBlogs.forEach(blog=>{%>
+        
         <tr>
-           <td>1</td>
+           <td><%= sn++ %></td>
            <td><%=blog.title%></td>
            <td><%=blog.subTitle%></td>
            <td><%=blog.description%></td>
@@ -65,7 +67,7 @@ th,td{
 
    
   </tbody>
-
+</table>
     <%- include('footer') %>
 </body>
 
