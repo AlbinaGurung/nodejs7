@@ -49,7 +49,7 @@ body{
 <body>
     <%- include('navbar.ejs')%>
     <div class="container">
-        <form action="/blog" method="POST" >
+        <form action="/blog" method="POST" enctype="multipart/form-data">
             <div class="form-input">
                 <label for="Title">Title</label>
                 <input type="text" class="form-input-box" name="title" id="title" required>
@@ -63,7 +63,7 @@ body{
                 <input type="text" class="form-input-box" name="description" id="description"required>
             </div>
             <div class="form-input">
-                <label for="">Image</label>
+                <label for="Image">Image</label>
                 <input type="file" class="form-input-box" name="Image" id="Image">
             </div>
             <div>

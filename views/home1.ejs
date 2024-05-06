@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+th,td{
+        border: 3px solid black;
+        padding: 8px;
+        width: 80%;
+        text-align: left;
+    }
+    #blogtable{
+        border-collapse: collapse;
+      
+        width: 80%;
+      
+        padding:auto;
+    }
+    th{
+        background-color: cornflowerblue;
+        text-align: left;
+        width: 20%;
+
+    }
+    tr{
+        width: 100%;
+    }
+    
+</style>
+<body>
+    <%- include('navbar') %>
+    <table id="blogtable">
+        <thead>
+        <tr>
+            <th>SN</th>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Description</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    </table>
+  <tbody>
+   
+    <% allBlogs.foreach(blog=>{%>
+     <tr>
+        <td>1</td>
+        <td><%=blog.title%></td>
+        <td><%=blog.subTitle%></td>
+        <td><%=blog.description%></td>
+        <td><%=blog.imageUrl%></td>
+     </tr>
+<%});%>
+   
+  </tbody>
+
+    <%- include('footer') %>
+</body>
+
+</html>
+<script>
+
+</script>

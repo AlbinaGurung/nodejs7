@@ -6,7 +6,7 @@ const storage=multer.diskStorage({
     },
     filename:function(req,file,cb)
     {
-        cb(null,date.now() + '-' + file.originalname)
+        cb(null,Date.now() + '-' + file.originalname)
     }
 });
 module.exports={
