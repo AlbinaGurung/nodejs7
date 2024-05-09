@@ -28,6 +28,7 @@ const db = {};
 
 db.blogs = require("./blogModel.js")(sequelize,DataTypes);
 db.users = require('./userModel')(sequelize,DataTypes);
+db.tasks=require('../models/tasklistModel.js')(sequelize,DataTypes);
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;

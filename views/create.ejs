@@ -8,6 +8,7 @@
         .container{
     width: 60%;
     display: flex;
+   
     height:100%;
     background-color:cornflowerblue;
     padding: 20px;
@@ -16,7 +17,7 @@
     border-color: black;
     
     border-radius: 6px;
-    margin-top: 200px;
+    margin-top: 150px;
     
 }
 body{
@@ -51,6 +52,8 @@ body{
 </head>
 <body>
     <%- include('navbar') %>
+    
+       
     <div class="container">
         <form action="/blog" method="POST" enctype="multipart/form-data">
             <div class="form-input">
@@ -70,7 +73,7 @@ body{
                 <input type="file" class="form-input-box" name="Image" id="Image">
             </div>
             <div>
-                <input type="submit" value="submit">
+                <input type="submit" value="submit" style="height: 40px; width: 100px; border-radius: 5px; background-color: lightgreen; color: black; font-size: 25px; margin-left: 30px;">
             </div>
         </form>
     </div>

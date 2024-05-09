@@ -9,19 +9,17 @@
 <style>
 th,td{
         border: 3px solid black;
-        
-        width: 80%;
+        padding: 10px;
+        width: 15%;
         text-align: left;
     }
     #blogtable{
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
+        
         border-collapse: collapse;
       
         width: 100%;
       
-      margin-top: 200px;
+      margin-top: 100px;
     }
     table{
         margin:0 auto;
@@ -29,44 +27,92 @@ th,td{
     th{
         background-color: cornflowerblue;
         text-align: left;
-        width: 20%;
+        padding: 10px;
+      
         font-size: 25px;
 
     }
     tr{
         width: 100%;
+        padding: 10px;
         justify-content: center;
+        
+    }
+    td{
+        font-size: 20px;
+    }
+    .btn{
+        width: 100px;
+        height: 40px;
+        border-radius: 5px;
+        color:black;
+        background-color: yellow;
     }
     
 </style>
 <body>
     <%- include('navbar') %>
+    <h1 style="margin-top: 150px; display: flex; justify-content: center; "><span style="font-size: 30px; color: green;">'Reading'</span> data from database</h1>
     <table id="blogtable">
         <thead>
         <tr>
             <th>SN</th>
             <th>Title</th>
-            <th>Subtitle</th>
+            <th>subtitle</th>
             <th>Description</th>
+            
             <th>Image</th>
+            <th>Action</th>
         </tr>
     </thead>
    
   <tbody>
-    <% var sn=1 %>
-    <% allBlogs.forEach(blog=>{%>
+     <% var sn=1 %>
+    <% allblogs.forEach(blog=>{%>
         
         <tr>
            <td><%= sn++ %></td>
            <td><%=blog.title%></td>
            <td><%=blog.subTitle%></td>
            <td><%=blog.description%></td>
+           <!-- <td><%=blog.subTitle%></td> -->
+          
+          
            <td><%=blog.imageUrl%></td>
+           <td><a href="/blog/<%= blog.id%>/show"><button class="btn">Showmore</button></a></td>
         </tr>
-   <%});%>
+   <%});%> 
 
-   
+   <!-- <tr>
+    <td>1.</td>
+    <td>blog 1</td>
+    <td>About blog one</td>
+    <td>2024-5-27</td>
+    <td style="color:red;">Incomplete</td>
+    <td>Image</td>
+    <td><a href="/blog/show"><button class="btn">Showmore</button></a></td>
+   </tr>
   </tbody>
+
+  <tr>
+    <td>1.</td>
+    <td>blog 2</td>
+    <td>About blog one</td>
+    <td>2024-5-27</td>
+    <td style="color:green;">Complete</td>
+    <td>Image</td>
+    <td><a href="/blog/show"><button class="btn">Showmore</button></a></td>
+   </tr>
+
+   <tr>
+    <td>1.</td>
+    <td>blog 3</td>
+    <td>About blog one</td>
+    <td>2024-5-27</td>
+    <td style="color:red;">Incomplete</td>
+    <td>Image</td>
+    <td><a href="/blog/show.ejs"><button class="btn">Showmore</button></a></td>
+   </tr> -->
 </table>
     <%- include('footer') %>
 </body>
