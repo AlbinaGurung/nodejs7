@@ -8,7 +8,28 @@ const app=express();//used to call functions
 app.use(express.static('public'));
 
 app.set('view engine','ejs')
-
+app.get('/blog/delete/:id',(req,res)=>{
+    console.log("hello")
+    const id=req.params.id;
+    console.log(id)
+   
+    blogs.destroy({where:{id}})
+    .then(numdeleted=>{
+        console.log(numdeleted)
+        if(numdeleted===0)
+        {
+            console.log("no blog found with id" .id)
+        }
+        else{
+        console.log("blog deleted successfully")
+         res.redirect('/blog/home1')
+    }
+    })
+    .catch(error=>
+        {
+            console.log(error)
+        });
+  });
 // app.get('/blog',(req,res)=>{
 //     const data={name:"albina" ,age:23}
 //     res.render('home.ejs',{data})
@@ -31,7 +52,7 @@ app.get('/blog/:id/show',(req,res)=>
 {
     //get the id
     const id=req.params.id;
-    console.log(id);
+    
    
      blogs.findOne({where:{id}})
      .then(blog=>{
@@ -40,6 +61,7 @@ app.get('/blog/:id/show',(req,res)=>
             return res.status(404).send("blog not found");
         }
         res.render('show',{blog});
+        
      })
      .catch(err=>
         {
@@ -55,27 +77,6 @@ app.get('/blog/:id/show',(req,res)=>
 app.use(express.urlencoded({extended:true}));
 
 //updating the data or blog based on id
-app.post('/blog/:id/update',upload.single('Image'),(req,res)=>{
-    
-    const id=parseInt(req.params.id);
-    console.log(id);
-    const {title,subTitle,description,imageUrl}=req.body;
-    console.log(req.body)
-    console.log(title,subTitle,description,imageUrl);
-    blogs.update({title,subTitle,description,imageUrl},{where:{id}})
-    .then(([result])=>{
-        if(result ===0)
-        {
-            return res.status(404).send("Task not found")
-        }
-        res.status(200).send("updated successfully")
-    })
-    .catch(err=>
-    {
-console.err("error updating")
-res.status(500).send("Internal Server Error");
-    });
-});
 
 
 //creating new blog
@@ -91,14 +92,39 @@ app.post('/blog',upload.single('Image'),(req,res)=>{
     res.redirect("/blog/home1")
     })
 
+    app.post('/blog/:id/update',upload.single('Image'),(req,res)=>{
+    
+        const id=parseInt(req.params.id);
+       
+        const {title,subTitle,description,imageUrl}=req.body;
+       
+      
+        blogs.update({title,subTitle,description,imageUrl},{where:{id}})
+        .then(([result])=>{
+            if(result ===0)
+            {
+                return res.status(404).send("Task not found")
+            }
+            // res.status(200).send("updated successfully")
+            res.redirect('/blog/home1')
+        })
+        .catch(err=>
+        {
+    console.err("error updating")
+    res.status(500).send("Internal Server Error");
+        });
+    });
+    
+ 
+
  //fetching the data or blog from the db and rendering it on the home1.ejs view
 app.get('/blog/home1',async(req,res)=>
 {
    
     try {
-        console.log("hello")
+       
         const allblogs = await blogs.findAll();//making a rest call to an api to get data
-       console.log(allblogs,"hello");
+      
     //    res.json(allblogs); // Assuming you want to display JSON data
   
      res.render('home1',{ allblogs })

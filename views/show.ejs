@@ -37,13 +37,14 @@ body{
     padding: 40px;
     background-color:lightblue;
     margin: 30px;
+
     
 }
 .form-input-box
 {
     width: 700px;
     height: 50px;
-   
+    font-size: 20px;
 
 }
 .button
@@ -70,12 +71,12 @@ body{
             <input type="text" class="form-input-box" name="title" id="title" value="<%=blog.title%>" required>
         </div>
         <div class="form-input">
-            <label for="Subtitle">Subtitle</label>
-           <input type="text" class="form-input-box" name="subtitle" id="subtitle" valur="<%=blog.subTitle%>" required>
+            <label for="subTitle">Subtitle</label>
+           <input type="text" class="form-input-box" name="subTitle" id="subTitle" value="<%=blog.subTitle%>" required>
         </div>
         <div class="form-input">
             <label for="Description">Description</label>
-            <input type="text" class="form-input-box" name="description" id="description" value="<%=blog.description%>" required>
+            <input type="text" class="form-input-box" name="description" id="description" value="<%= blog.description%>" required>
         </div>
         <div class="form-input">
             <label for="Image">Image</label>
@@ -83,8 +84,8 @@ body{
             
         </div>
         <div>
-            <input type="submit" value="Update" style="background-color: green;" class="button">
-            <input type="submit" value="delete" style="background-color: red;" class="button" >
+         <button type="submit" class="button" style="background-color: lightgreen;">Update</button></a> 
+          <button class="button"> <a href="/blog/delete/<%- blog.id%>">Delete</a></button>
         </div>
     </form>
 
